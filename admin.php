@@ -10,12 +10,7 @@
 </head>
 <body>
 <div class="container">
-    <header class="d-flex justify-content-center py-3">
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="index.php" class="nav-link active" aria-current="page">Accueil</a></li>
-            <li class="nav-item"><a href="login.php" class="nav-link">Connexion</a></li>
-        </ul>
-    </header>
+    <?php require "./templates/header.php" ?>
 
     <?php
 
