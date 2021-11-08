@@ -13,9 +13,19 @@
     <?php require "./templates/header.php" ?>
 
     <?php
-    $dbh = new PDO('mysql:host=localhost:8889;dbname=cours_php_g4', "root", "root");
+    $db = require "./config/database.php";
 
+    $result = $db->query("SELECT * FROM wines");
+    $wines = $result->fetchAll();
     ?>
+
+    <?php foreach ($wines as $wine): ?>
+
+        <div>
+            <span><?= $wine["name"] ?> - <?= $wine["year"] ?></span>
+        </div>
+
+    <?php endforeach; ?>
 
     <!-- Mon contenu -->
     <?php

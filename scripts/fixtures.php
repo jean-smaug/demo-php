@@ -1,6 +1,6 @@
 <?php
 
-$db = new PDO('mysql:host=localhost:8889;dbname=cours_php_g4', "root", "root");
+$db = require __DIR__."/../config/database.php";
 
 $stmt = $db->prepare("INSERT INTO wines(name, year) VALUES (:name, :year)");
 
