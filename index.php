@@ -12,32 +12,19 @@
 <div class="container">
     <?php require "./templates/header.php" ?>
 
-    <main>
-        <?php
-            $uri = $_SERVER["REQUEST_URI"];
-
-            var_dump($uri);
-
-            if($uri === "/") {
-                echo "accueil";
-            } else {
-                require "./pages".$uri.".php";
-            }
-
-        ?>
-    </main>
 
 
-   <!-- <form method="get" action="index.php">
-        <div class="mb-3">
-            <label for="search" class="form-label">Recherche</label>
-            <input type="search" class="form-control" id="search" name="search">
-        </div>
+    <!-- Mon contenu -->
+    <?php
+        // $uri = str_replace("?".$_SERVER["QUERY_STRING"], "", $_SERVER["REQUEST_URI"]);
+        $uri = $_SERVER["PATH_INFO"];
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-
-        Tu as cherché : <?php echo $_GET["search"] ?>
-    </form>-->
+        if($uri === null) {
+            echo "Page d'accueil";
+        } else {
+            require "./pages".$uri.".php";
+        }
+    ?>
 
     <?php require "./templates/footer.php" ?>
 

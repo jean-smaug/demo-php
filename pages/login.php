@@ -1,7 +1,4 @@
-<div class="container">
-
-
-<form method="post" action="admin.php">
+<form method="post" action="/admin">
     <div class="mb-3">
         <label for="username" class="form-label">Pseudo</label>
         <input type="text"  class="form-control" id="username" name="username">
