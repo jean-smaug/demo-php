@@ -24,10 +24,7 @@
 
     ?>
 
-    <div class="container">
-        <p class="text-center text-muted">© 2021 Company, Inc</p>
-        </footer>
-    </div>
+    <?php require "./templates/footer.php" ?>
 
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </div>
