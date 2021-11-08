@@ -8,11 +8,27 @@
     <title>Document</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 <div class="container">
     <?php require "./templates/header.php" ?>
 
-    <form method="get" action="index.php">
+    <main>
+        <?php
+            $uri = $_SERVER["REQUEST_URI"];
+
+            var_dump($uri);
+
+            if($uri === "/") {
+                echo "accueil";
+            } else {
+                require "./pages".$uri.".php";
+            }
+
+        ?>
+    </main>
+
+
+   <!-- <form method="get" action="index.php">
         <div class="mb-3">
             <label for="search" class="form-label">Recherche</label>
             <input type="search" class="form-control" id="search" name="search">
@@ -21,7 +37,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
 
         Tu as cherché : <?php echo $_GET["search"] ?>
-    </form>
+    </form>-->
 
     <?php require "./templates/footer.php" ?>
 
