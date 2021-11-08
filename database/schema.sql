@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS wines
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name VARCHAR(250),
+    year INT,
+    UNIQUE(name,year)
+    );
+
+ALTER TABLE wines
+MODIFY name VARCHAR(255);

@@ -12,7 +12,10 @@
 <div class="container">
     <?php require "./templates/header.php" ?>
 
+    <?php
+    $dbh = new PDO('mysql:host=localhost:8889;dbname=cours_php_g4', "root", "root");
 
+    ?>
 
     <!-- Mon contenu -->
     <?php
