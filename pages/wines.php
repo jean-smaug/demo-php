@@ -16,6 +16,12 @@
 
     <div>
         <span><?= $wine["name"] ?> - <?= $wine["year"] ?></span>
+        <form action="/wines" method="post">
+            <input type="hidden" name="type" value="DELETE">
+            <input type="hidden" name="id" value="<?= $wine["id"] ?>">
+
+            <button class="btn btn-danger" type="submit">X</button>
+        </form>
     </div>
 
 <?php endforeach; ?>

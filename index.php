@@ -16,7 +16,11 @@
         }
 
         if($method === "POST") {
-            $wineController->new();
+            if($_POST["type"] === "DELETE") {
+                $wineController->destroy();
+            } else {
+                $wineController->new();
+            }
         }
     }
     else if($uri === null) {
