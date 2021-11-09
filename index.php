@@ -12,27 +12,18 @@
 <div class="container">
     <?php require "./templates/header.php" ?>
 
-    <?php
-    $db = require "./config/database.php";
-
-    $result = $db->query("SELECT * FROM wines");
-    $wines = $result->fetchAll();
-    ?>
-
-    <?php foreach ($wines as $wine): ?>
-
-        <div>
-            <span><?= $wine["name"] ?> - <?= $wine["year"] ?></span>
-        </div>
-
-    <?php endforeach; ?>
-
     <!-- Mon contenu -->
     <?php
         // $uri = str_replace("?".$_SERVER["QUERY_STRING"], "", $_SERVER["REQUEST_URI"]);
         $uri = $_SERVER["PATH_INFO"];
 
-        if($uri === null) {
+        if($uri === "/wines") {
+            require "./controllers/WineController.php";
+
+            $wineController = new WineController();
+            $wineController->index();
+        }
+        else if($uri === null) {
             echo "Page d'accueil";
         } else {
             require "./pages".$uri.".php";
