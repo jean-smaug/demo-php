@@ -10,4 +10,12 @@ class WineController
 
         require __DIR__."/../pages/wines.php";
     }
+
+
+    public function new() {
+        $wineModel = new Wine();
+        $wineModel->create($_POST["name"], $_POST["year"]);
+
+        header("Location: /wines");
+    }
 }
